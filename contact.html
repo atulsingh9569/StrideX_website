@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contact Us - Stridex</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -15,24 +16,51 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#products">Products</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Get in Touch</h2>
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Your Name" required />
-                <input type="email" id="email" placeholder="Your Email" required />
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <div id="contactFormContainer">
+                <h2>Contact Information</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required /><br>
+                    <input type="email" id="email" placeholder="Your Email" required /><br>
+                    <textarea id="message" placeholder="Your Message" required></textarea><br>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Stridex. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Stridex</h2>
+                <p>Stridex is dedicated to creating innovative prosthetics that improve mobility and enhance lives.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: techstridex@gmail.com</p>
+                <p>Phone: +91 95694 70689</p>
+                <p>Location: Kanpur, Uttar Pradesh 209305</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stridex | All Rights Reserved</p>
+        </div>
     </footer>
+
 </body>
 </html>

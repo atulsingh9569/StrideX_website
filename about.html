@@ -4,78 +4,99 @@
     <meta charset="UTF-8">
     <title>About Us - Stridex Team</title>
     <link rel="stylesheet" href="style.css">
+    <script src="slideshow.js" defer></script>
 </head>
 <body class="about-page">
     <header>
-        <h1>Stridex Team</h1>
+        <h1>Stridex</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+                <li><a href="about.html" class="active">About Us</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="team">
         <h2>Meet Our Team</h2>
-
-        <div class="team-member left">
-            <img src="member1.jpg" alt="Member 1">
-            <div class="details">
-                <h3>Atul Singh</h3>
-                <p>Founder and visionary behind Stridex’s innovative prosthetic designs.</p>
-                <p>Email: atulsingh6692@gmail.com</p>
-                <a href="https://www.linkedin.com/in/atul-singh-b2b232304" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="photos/member1.jpg" alt="Atul Singh">
+                <div class="details">
+                    <h3>Atul Singh</h3>
+                    <p>Founder and visionary behind Stridex’s innovative prosthetic designs.</p>
+                    <p>Email: atulsingh6692@gmail.com</p>
+                    <a href="https://www.linkedin.com/in/atul-singh-b2b232304" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="photos/member2.jpg" alt="Avinash Singh">
+                <div class="details">
+                    <h3>Avinash Singh</h3>
+                    <p>Co-founder and visionary behind Stridex’s innovative prosthetic designs.</p>
+                    <p>Email: singhavinash7860@gmail.com</p>
+                    <a href="http://www.linkedin.com/in/avinash-singh-6b2a362a5" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="photos/member3.jpg" alt="Ayush Mishra">
+                <div class="details">
+                    <h3>Ayush Mishra</h3>
+                    <p>Market Analyst</p>
+                    <p>Email: ayushm29874ishra@gmail.com</p>
+                    <a href="https://www.linkedin.com/in/ayush-mishra-5723012a5/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="photos/member4.jpg" alt="Darshika Singh">
+                <div class="details">
+                    <h3>Darshika Singh</h3>
+                    <p>Software Engineer responsible for the AI in our smart prosthetics.</p>
+                    <p>Email: 2k22.cse.2213571@gmail.com</p>
+                    <a href="http://www.linkedin.com/in/darshika-singh-b61083290" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="photos/member5.jpg" alt="Ayush Yadav">
+                <div class="details">
+                    <h3>Ayush Yadav</h3>
+                    <p>Software Engineer responsible for the AI in our smart prosthetics.</p>
+                    <p>Email: ayushyadav998419@gmail.com</p>
+                    <a href="https://www.linkedin.com/in/ayush-yadav-62ab40246/" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
-
-        <div class="team-member right">
-            <img src="member2.jpg" alt="Member 2">
-            <div class="details">
-                <h3>Avinash Singh</h3>
-                <p>Co-founder and visionary behind Stridex’s innovative prosthetic designs.</p>
-                <p>Email: singhavinash7860@gmail.com</p>
-                <a href="http://www.linkedin.com/in/avinash-singh-6b2a362a5" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-            </div>
-        </div>
-
-        <div class="team-member left">
-            <img src="member3.jpg" alt="Member 3">
-            <div class="details">
-                <h3>Ayush Mishra</h3>
-                <p>Market Analyst</p>
-                <p>Email: ayushm29874ishra@gmail.com</p>
-                <a href="https://www.linkedin.com/in/ayush-mishra-5723012a5/" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-            </div>
-        </div>
-
-        <div class="team-member right">
-            <img src="member4.jpg" alt="Member 4">
-            <div class="details">
-                <h3>Darshika Singh</h3>
-                <p>Software Engineer responsible for the AI in our smart prosthetics.</p>
-                <p>Email: 2k22.cse.2213571@gmail.com</p>
-                <a href="http://www.linkedin.com/in/darshika-singh-b61083290" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-            </div>
-        </div>
-
-        <div class="team-member left">
-            <img src="member5.jpg" alt="Member 5">
-            <div class="details">
-                <h3>Ayush</h3>
-                <p>Software Engineer responsible for the AI in our smart prosthetics..</p>
-                <p>Email: ayushyadav998419@gmail.com</p>
-                <a href="https://www.linkedin.com/in/ayush-yadav-62ab40246/" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-            </div>
-        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </section>
 
     <footer>
-        <p>&copy; 2025 Stridex. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Stridex</h2>
+                <p>Stridex is dedicated to creating innovative prosthetics that improve mobility and enhance lives.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: techstridex@gmail.com</p>
+                <p>Phone: +91 95694 70689</p>
+                <p>Location: Kanpur, Uttar Pradesh 209305</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stridex | All Rights Reserved</p>
+        </div>
     </footer>
 </body>
 </html>
