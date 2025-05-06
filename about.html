@@ -4,15 +4,181 @@
     <meta charset="UTF-8">
     <title>About Us - Stridex Team</title>
     <link rel="stylesheet" href="style.css">
-    <script src="slideshow.js" defer></script>
+    <!-- Google Fonts (Assuming same as index.html) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1rem 2rem;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a.active,
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 2rem;
+            text-align: center;
+            animation: fade 1s ease-in-out;
+        }
+
+        .slide img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid #00bcd4;
+        }
+
+        .slide .details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .slide .details p {
+            font-size: 0.95rem;
+            margin: 0.3rem 0;
+        }
+
+        .slide .details a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        @keyframes fade {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 2rem 1rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 1rem;
+            min-width: 200px;
+        }
+
+        .footer-section h2 {
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-<body class="about-page">
+<body>
     <header>
         <h1>Stridex</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
                 <li><a href="contact.html">Contact</a></li> 
                 <li><a href="about.html" class="active">About Us</a></li>
             </ul>
@@ -67,9 +233,9 @@
                     <a href="https://www.linkedin.com/in/ayush-yadav-62ab40246/" target="_blank">LinkedIn</a>
                 </div>
             </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </section>
 
     <footer>
@@ -81,8 +247,8 @@
             <div class="footer-section links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
@@ -98,5 +264,38 @@
             <p>&copy; 2025 Stridex | All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        let slides, autoSlideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+            });
+        }
+
+        function changeSlide(direction) {
+            slideIndex = (slideIndex + direction + slides.length) % slides.length;
+            showSlide(slideIndex);
+            resetAutoSlide();
+        }
+
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(autoSlide, 4000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            slides = document.querySelectorAll(".slide");
+            showSlide(slideIndex);
+            autoSlideInterval = setInterval(autoSlide, 4000);
+        });
+    </script>
 </body>
 </html>
