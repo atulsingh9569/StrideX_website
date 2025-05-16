@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stridex - Empowering Mobility with Smart Prosthetics</title>
+  <link rel="icon" type="image/png" href="photos/stridexlogo.png">
+  <title>Stridex Innovations</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,6 +22,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
     header h1 {
@@ -28,11 +33,50 @@
       font-size: 2rem;
       font-family: 'Orbitron', sans-serif;
     }
+    .sidebar {
+      position: fixed;
+      top: -250px; /* height of your header */
+      left: 0px;
+      width: 200px;
+      background-color: #2c5364;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+      z-index: 999;
+      height: auto;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      text-decoration: none;
+      color: #00bcd4;
+      transition: 1s ease, left 1s ease;
+    }
+
+    .sidebar.active {
+      top: 50px; /* Show the sidebar */
+      left: 0px; /* Show the sidebar */
+      transition: top 1s ease, left 1s ease; /* Add animation for 1 second */
+    }
 
     nav ul {
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding-right: 65px;
       display: flex;
       gap: 1.5rem;
     }
@@ -236,6 +280,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       display: none;
       transition: background-color 0.3s;
+      width: 52px;
     }
 
     #backToTopBtn:hover {
@@ -271,10 +316,21 @@
   </style>
 </head>
 <body>
+  <!-- Sidebar Navigation -->
+  <div id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#applications">Application</a></li>
+      <li><a href="#working">Working</a></li>
+    </ul>
+  </div>
 
   <!-- Header -->
   <header>
-    <h1>Stridex</h1>
+    <h1 id="stridexLogo">
+    <img src="photos/stridexlogo.png" alt="Stridex Logo" style="height: 2.2rem; vertical-align: middle; margin-right: 10px;">
+    Stridex
+  </h1>
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -303,47 +359,117 @@
     </div>
   </section>
 
-  <!-- Features -->
+  <!-- Features Section -->
   <section id="features">
     <h2>Key Features</h2>
     <div class="feature-grid">
+      <!-- Feature 1 -->
       <div class="card">
         <h3>Intelligent Motion Detection</h3>
-        <p>Uses gyroscopes, accelerometers, and pressure sensors for real-time posture tracking.</p>
+        <ul>
+          <li>Incorporates gyroscopes and accelerometers for precise motion tracking</li>
+          <li>Monitors posture and gait in real-time</li>
+          <li>Detects sudden changes in movement or balance</li>
+          <li>Provides data for adaptive control and feedback</li>
+        </ul>
       </div>
+
+      <!-- Feature 2 -->
       <div class="card">
         <h3>AI-Driven Fall Prediction</h3>
-        <p>Detects instability and triggers support mechanisms automatically.</p>
+        <ul>
+          <li>Analyzes motion patterns using advanced AI algorithms</li>
+          <li>Identifies potential instability or fall risks</li>
+          <li>Activates support mechanisms instantly upon detection</li>
+          <li>Minimizes injury risk with proactive intervention</li>
+        </ul>
       </div>
+
+      <!-- Feature 3 -->
       <div class="card">
         <h3>Smart Actuation System</h3>
-        <p>Solenoid valves and actuators adjust dynamically based on user movement.</p>
+        <ul>
+          <li>Uses microcontroller to control valve timing</li>
+          <li>Activates pneumatic actuators with precision</li>
+          <li>Enables smooth and controlled limb movement</li>
+          <li>Ensures energy-efficient operation with minimal delay</li>
+        </ul>
       </div>
+
+      <!-- Feature 4 -->
       <div class="card">
         <h3>Customizable Interface</h3>
-        <p>Seamless mobile/desktop control for live feedback and settings.</p>
+        <ul>
+          <li>User-friendly interface adaptable to individual needs</li>
+          <li>Allows configuration of speed, stride length, and sensitivity</li>
+          <li>Easy joystick or mobile app control</li>
+          <li>Designed for future AI-assisted adjustments/li>
+        </ul>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="card">
+        <h3>Expandable for AI & ML Integration</h3>
+        <p>Designed with the future goal of integrating:</p>
+        <ul>
+          <li>Fall prediction models</li>
+          <li>Gait pattern recognition</li>
+          <li>Personalized assistance using ML algorithms</li>
+        </ul>
+        <p>Can store and use user data for smart recommendations or adaptive control.</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="card">
+        <h3>Versatile Applications</h3>
+        <p>Can assist in various scenarios, including:</p>
+        <ul>
+          <li>Amputees using prosthetics</li>
+          <li>People with lower-limb disabilities</li>
+          <li>Elderly needing stability while walking</li>
+        </ul>
+        <p><strong>Expandable:</strong> Full-body assistive exoskeletons or mobility suits.</p>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
+  <!-- How It Works Section -->
   <section id="how-it-works">
     <h2>How It Works</h2>
     <div class="feature-grid">
+      <!-- Step 1 -->
       <div class="card">
         <h3>1. Sensor Input</h3>
         <p>IMUs monitor body motion and transmit real-time data.</p>
       </div>
+
+      <!-- Step 2 -->
       <div class="card">
         <h3>2. Data Processing</h3>
         <p>AI analyzes body dynamics and posture to detect fall risk.</p>
       </div>
+
+      <!-- Step 3 -->
       <div class="card">
-        <h3>3. Responsive Action</h3>
+        <h3>3. Decision Making</h3>
+        <p>AI algorithms determine the appropriate corrective action based on the data.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="card">
+        <h3>4. Responsive Action</h3>
         <p>Actuators and valves engage immediately if instability is detected.</p>
       </div>
+
+      <!-- Step 5 -->
       <div class="card">
-        <h3>4. Feedback Loop</h3>
+        <h3>5. Adaptive Adjustment</h3>
+        <p>The system continuously adapts to user movements for seamless operation.</p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="card">
+        <h3>6. Feedback Loop</h3>
         <p>Users receive insights through connected applications and visual dashboards.</p>
       </div>
     </div>
@@ -368,6 +494,14 @@
       <div class="card">
         <h3>Personal Mobility</h3>
         <p>Empowers amputees and individuals with mobility challenges.</p>
+      </div>
+      <div class="card">
+        <h3>Sports & Athletics</h3>
+        <p>Provides support and performance enhancement for athletes.</p>
+      </div>
+      <div class="card">
+        <h3>Military & Defense</h3>
+        <p>Assists soldiers with load-bearing and mobility in challenging terrains.</p>
       </div>
     </div>
   </section>
@@ -436,17 +570,34 @@
   </footer>
   <button id="backToTopBtn" title="Go to top">⬆</button>
   <script>
-  const topBtn = document.getElementById("backToTopBtn");
+      const topBtn = document.getElementById("backToTopBtn");
 
-  window.onscroll = () => {
-    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  };
+      window.onscroll = () => {
+        topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      };
 
-  topBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-</script>
+      topBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+      // Sidebar toggle
+      const stridexLogo = document.getElementById("stridexLogo");
+      const sidebar = document.getElementById("sidebar");
+
+      stridexLogo.addEventListener("mouseenter", () => {
+        sidebar.classList.add("active");
+      });
+
+      sidebar.addEventListener("mouseleave", () => {
+        sidebar.classList.remove("active");
+      });
+
+      stridexLogo.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+  </script>
 
 
 </body>
 </html>
+`

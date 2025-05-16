@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us - Stridex Team</title>
+    <link rel="icon" type="image/png" href="photos/stridexlogo.png">
+  <title>Stridex Innovations</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -26,6 +27,7 @@
         header h1 {
             margin: 0;
             font-size: 2rem;
+            font-family: 'Orbitron', sans-serif;
         }
 
         nav ul {
@@ -62,17 +64,43 @@
             color: #2c5364;
         }
 
-        .mission p, .story p {
+        .mission p {
             font-size: 1.2rem;
-            line-height: 1.8;
+            line-height: 1.9;
             text-align: justify;
             margin-bottom: 1.5rem;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-left: 6px solid #2c5364;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
+
+        .mission p strong {
+            display: block;
+            font-size: 1.3rem;
+            color: #2c5364;
+            margin-bottom: 0.3rem;
+        }
+        .story p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-left: 6px solid #56ab2f;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+
 
         .slideshow-container {
             position: relative;
-            max-width: 900px;
+            width: 600px;
             margin: 2rem auto;
+            height: 450px;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -87,12 +115,12 @@
         }
 
         .slide img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 80%;
             margin-bottom: 1rem;
-            border: 4px solid #00bcd4;
+            border: 4px solid #9aa5a7;
         }
 
         .slide .details h3 {
@@ -126,6 +154,7 @@
             border-radius: 50%;
             z-index: 10;
             transition: background-color 0.3s;
+            width: 60px;
         }
 
         .prev:hover, .next:hover {
@@ -156,6 +185,7 @@
         cursor: pointer;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         transition: opacity 0.3s ease;
+        width: 52px;
       }
       
       #backToTopBtn:hover {
@@ -211,7 +241,10 @@
 </head>
 <body>
     <header>
-        <h1>Stridex</h1>
+        <h1 id="stridexLogo">
+    <img src="photos/stridexlogo.png" alt="Stridex Logo" style="height: 2.2rem; vertical-align: middle; margin-right: 10px;">
+    Stridex
+  </h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -224,15 +257,21 @@
 
     <section class="mission">
         <h2>Our Mission & Vision</h2>
-        <p>At Stridex, our mission is to empower individuals with limb differences by providing advanced, affordable, and intelligent prosthetic solutions.</p>
-        <p>We envision a world where mobility challenges are overcome with smart technology, enabling everyone to walk forward with confidence and dignity.</p>
+        <p><strong>Our Mission:</strong> To revolutionize mobility for individuals with limb differences by delivering cutting-edge, intelligent, and affordable prosthetic solutions. We are committed to restoring not just movement, but independence, dignity, and hope.</p>
+        <p><strong>Our Vision:</strong> To create a world where technology bridges the gap between limitation and possibility—where every individual, regardless of physical challenges, walks forward with confidence, empowerment, and equal opportunity.</p>
     </section>
 
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>Stridex was born out of a shared passion among a group of engineers and designers who saw the challenges faced by amputees. What started as a college innovation project quickly turned into a mission to build next-generation prosthetics.</p>
-        <p>We witnessed how traditional solutions lacked affordability and intelligence. That's why we decided to create a product that not only restores mobility but also adapts to the user’s lifestyle with AI and smart design. Today, we proudly deliver hope and technology through every step.</p>
-    </section>
+
+    <<section class="story">
+    <h2>Our Story</h2>
+    <p>
+        Stridex began with a bold question: What if cutting-edge technology could restore mobility and confidence to those who had lost it? Born from a vision to redefine what’s possible for individuals with limb differences, Stridex was founded by a passionate group of engineers, designers, and dreamers united by a shared mission—to create a new generation of intelligent, adaptive prosthetics.
+    </p>
+    <p>
+        Our journey started with one simple belief: mobility is not a luxury—it’s a right. Through rigorous innovation, human-centered design, and countless hours of development, Stridex evolved into more than a project. It became a movement. Today, we remain driven by the stories of the people we serve—each step they take is a testament to the power of purpose-driven technology.
+    </p>
+</section>
+
 
     <section id="team">
         <h2>Meet Our Team</h2>
